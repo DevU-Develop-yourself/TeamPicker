@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Picker</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      text-align: center;
+    }
+    #teamColor {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      padding: 15px;
+      /*border: 2px solid #ddd;*/
+      border-radius: 10px;
+      background-color: #fff;
+      color: #000;
+      width: 90%;
+      max-width: 400px;
+      word-wrap: break-word;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: #fff;
+      width: 90%;
+      max-width: 200px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="teamColor">Tap the button to get your team color</div>
+  <button onclick="getRandomColor()">Get Team</button>
+  <script>
+    function getRandomColor() {
+      const colors = ['Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      const teamColorDiv = document.getElementById('teamColor');
+      teamColorDiv.textContent = randomColor;
+      teamColorDiv.style.backgroundColor = randomColor.toLowerCase();
+      teamColorDiv.style.color = randomColor === 'Yellow' ? '#000' : '#fff';
+    }
+  </script>
+</body>
+</html>
